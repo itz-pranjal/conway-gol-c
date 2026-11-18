@@ -6,8 +6,19 @@ This is a basic Conway's game of life build in C using raylib.
 
 ## Installation 
 ### Building from source 
+
+You need a C compiler and raylib install in your system to build it.
+
 - Clone the repository 
 ```
 git clone https://github.com/itz-pranjal/conway-gol-c
+```
+- Compile 
+```
+cd conway-gol-c && gcc gcc main.c -o gol -O3
+```
+- Run 
+```
+./gol
 ```
 
