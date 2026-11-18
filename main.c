@@ -80,6 +80,17 @@ int main() {
             }
         }
 
+        if (IsKeyPressed(KEY_R)) {
+            key = !key;
+        }
+        if (!key && IsKeyPressed(KEY_R)) {
+            for (int row = 0; row < 30; row++) {
+                for (int col = 0; col < 30; col++) {
+                    grid[row][col] = 0;
+                    newgrid[row][col] = 0;
+                }
+            }
+        }
         if (IsKeyPressed(KEY_SPACE)) {
             key = !key;
         }
