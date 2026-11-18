@@ -15,7 +15,7 @@ git clone https://github.com/itz-pranjal/conway-gol-c
 ```
 - Compile 
 ```
-cd conway-gol-c &&  gcc main.c -o main -lraylib -O3 
+cd conway-gol-c &&  gcc main.c -o gol -lraylib -O3 
 ```
 - Run 
 ```
