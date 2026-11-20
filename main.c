@@ -104,8 +104,8 @@ int main() {
         // header
 
         DrawRectangle(0, 0, width, 100, BLACK);
-        DrawText("conaway game of life ", 400, 66, 20, WHITE);
-
+        DrawText("conaway game of life ", 0, 0, 20, WHITE);
+        DrawText("R : restart", 400, 66, 20, WHITE);
         if (!key) {
             DrawText("current mode : drawing", 750, 66, 20, WHITE);
         } else {
