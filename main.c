@@ -4,7 +4,7 @@
 int grid[30][30] = {0};
 int newgrid[30][30] = {0};
 void update() {
-    // display
+    // calculating the next generation
     for (int row = 0; row < 30; row++) {
         for (int colum = 0; colum < 30; colum++) {
 
@@ -30,13 +30,13 @@ void update() {
             }
             if (grid[row][colum] == 1) // cell is alive
             {
-                if (alive > 3 || alive <= 1) {
-                    newgrid[row][colum] = 0;
-                } else {
+                if (alive == 2 || alive == 3) {
                     newgrid[row][colum] = 1;
+                } else {
+                    newgrid[row][colum] = 0;
                 }
-            } else {
-
+            } else // cell is dead
+            {
                 if (alive == 3) {
                     newgrid[row][colum] = 1;
                 } else {
@@ -46,7 +46,7 @@ void update() {
         }
     }
 
-    // real updating grid with new grid
+    // updating orignal grid with new grid
     for (int row = 0; row < 30; row++) {
         for (int col = 0; col < 30; col++) {
             grid[row][col] = newgrid[row][col];
@@ -59,15 +59,15 @@ int main() {
     int height = 1000;
     int gap = 3;
     int n = 30;
-    int key = false;
+    bool isrunning = false;
     float widthBOX = (width - (n - 1) * gap) / (float)n;
     int selectedx = 0;
     InitWindow(width, height, "life game");
     SetTargetFPS(15);
 
     while (!WindowShouldClose()) {
-        // mose positon
-        if (!key && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+        // mose positon selection draw only
+        if (!isrunning && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
             Vector2 mouse = GetMousePosition();
             int MX = mouse.x;
             int MY = mouse.y;
@@ -80,10 +80,8 @@ int main() {
             }
         }
 
+        // R ==> restart(clean all grid)
         if (IsKeyPressed(KEY_R)) {
-            key = !key;
-        }
-        if (!key && IsKeyPressed(KEY_R)) {
             for (int row = 0; row < 30; row++) {
                 for (int col = 0; col < 30; col++) {
                     grid[row][col] = 0;
@@ -91,10 +89,12 @@ int main() {
                 }
             }
         }
+        // space ==> chaning mode
         if (IsKeyPressed(KEY_SPACE)) {
-            key = !key;
+            isrunning = !isrunning;
         }
-        if (key) {
+        // update the simulation
+        if (isrunning) {
             update();
         }
 
@@ -106,7 +106,7 @@ int main() {
         DrawRectangle(0, 0, width, 100, BLACK);
         DrawText("conaway game of life ", 0, 0, 20, WHITE);
         DrawText("R : restart", 400, 66, 20, WHITE);
-        if (!key) {
+        if (!isrunning) {
             DrawText("current mode : drawing", 750, 66, 20, WHITE);
         } else {
             DrawText("current mode: working", 750, 66, 20, YELLOW);
