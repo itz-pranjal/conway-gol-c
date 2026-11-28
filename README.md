@@ -4,7 +4,7 @@ A simple implimentation of **Conway's game of life** build in C using [raylib].
 
 "conway's game of life" or simple Life,is a cellural automaton devised by the british mathematician John Horton Conway in 1970.Despite having a few simple rules,it can produce fascinating patterns.
 
-## ScreenShort 📸 
+## ScreenShort  
 
 <p align="center">
 <img src="./screen.png"width="500">
@@ -36,13 +36,7 @@ The status of every cell changes simultaneously with each generation according t
 
 These simple rules create complex and sometimes unpredictable patterns.
 
-## Controls 🎮 
-|     Key    |           Action       |
-|------------|------------------------|
-| **Space**  |  To change mode.       |
-|**R**       | Restart the simulation.|
-
-## Installation 🛠️ 
+## Installation 
 
 ### Building from source 
 
@@ -71,19 +65,23 @@ gcc main.c -o gol -lraylib -O3
 ./gol
 ```
 
-## Compilation Flags
+## Download and Run
 
-Here's a brief explanation of the compiler flags used:
+Grab a binary from [Releases](../../releases) page,then:
+```
+chmod +x forgetmenot-linux-amd64
+./gol-linux-x64
+```
+## Controls 
 
-|   Flag    |   Description                          |
-|-----------|----------------------------------------|
-|   main.c  |   source file                          |
-|   -o gol  |   Specifics the output executable name |
-|   -lraylib|   Link the raylib lraylib              |
-|   -O3     |   Enables compiler optimization        |
+|     Key    |           Action       |
+|------------|------------------------|
+| **Space**  |  To change mode.       |
+|**R**       | Restart the simulation.|
 
 ## limitations 
 
 - **fixed grid size**: The simulation used a predefined grid siz
 - **No Save/load**: simulation states cannot currently be saved or restored.
+
 
