@@ -1,29 +1,33 @@
 # Game of Life 
-This is a simple implimentation of Conway's game of life build in C using raylib.
-the "conway's game of life" or simple Life,is a cellural automaton devised by the british mathematician John Horton Conway in 1970.
+This is a simple implimentation of **Conway's game of life** build in C using [raylib]
+(https://www.raylib.com/).
+
+"conway's game of life" or simple Life,is a cellural automaton devised by the british mathematician John Horton Conway in 1970.
 
 
 <p align="center">
-
 ##ScreenShort
-<img src="./screen.png"width="350">
+<img src="./screen.png"width="500">
 </p>
 
-##How Does It Works
-the simulation follows the basic rules:
+##How Does It Works?
 
-1.Underpopulation: A live cell will die if it have less than two neighobours
-2.Overpopulation: A live cell will die if it have more than three neighobours.
-3.survival: A live cell will survive with two or three neighobours.
-4.Reproduce: A dead cell with exact three living neighobours becomes alive.
+the simulation follows four basic rules:
+
+1.**Underpopulation**: A live cell will die if it have less than two neighobours
+2.**Overpopulation**: A live cell will die if it have more than three neighobours.
+3.**survival**: A live cell will survive with two or three neighobours.
+4.**Reproduce**: A dead cell with exact three living neighobours becomes alive.
 
 ##Controls 
-press
+**Space** : To change mode.
+**R** : Restart the simulation.
+
 ## Installation 
+
 ### Building from source 
 
-You need a C compiler and raylib install in your system to build it.
-
+To build this project, you need a C compiler and [raylib](https://www.raylib.com/) installed on your system.
 - Clone the repository 
 ```
 git clone https://github.com/itz-pranjal/conway-gol-c
